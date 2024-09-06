@@ -24,6 +24,11 @@ img {
     max-width: 100%;
 }
 
+main {
+    background-image: linear-gradient(#009688 125px, #DBDBD3 0);
+    padding: 25px 0;
+}
+
 ul {
     list-style-type: none;
 }
@@ -48,3 +53,29 @@ ul {
 }
 
 /* Layout */
+
+.row {
+    height: calc(100vh - 50px);
+}
+
+.header {
+    height: 50px;
+    background-color: #EAEAEA;
+}
+
+.chat {
+    height: calc(100vh - 100px);
+    background-color: #FFF;
+    overflow-y: auto;
+}
+
+.messages {
+    height: calc(100vh - 150px);
+    background-image: url(../img/background.png);
+    overflow-y: auto;
+}
+
+.footer {
+    height: 50px;
+    background-color: #F3EEEA;
+}
