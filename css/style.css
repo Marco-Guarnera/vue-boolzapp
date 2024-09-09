@@ -61,6 +61,10 @@ img.avatar {
     font-weight: bold;
 }
 
+.active-chat {
+    background-color: #EAEAEA;
+}
+
 .sent-message {
     background-color: #D5F9BA;
     position: relative;
@@ -145,10 +149,15 @@ img.avatar {
 }
 
 .chat-list-item {
+    cursor: pointer;
     height: 75px;
     border-bottom: 1px solid #EAEAEA;
     display: flex;
     padding: 0 1rem;
+}
+
+.chat-list-item:hover {
+    background-color: #EAEAEA;
 }
 
 #messages-list {

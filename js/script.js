@@ -3,6 +3,7 @@
 const app = Vue.createApp({
     name: "Boolzapp",
     data: () => ({
+        currentChat: 0,
         // User
         user: {
             name: "Sofia",
@@ -194,7 +195,17 @@ const app = Vue.createApp({
         ]
     }),
     computed: {},
-    methods: {}
+    methods: {
+        setActiveChat(chat) {
+            if (this.currentChat === chat) return "active-chat";
+        },
+        setCurrentChat(newChat) {
+            return this.currentChat = newChat;
+        },
+        setStatusMessage(message) {
+            return message.status === "sent" ? "sent-message" : "received-message";
+        }
+    }
 });
 
 app.mount("#app");

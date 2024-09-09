@@ -66,7 +66,8 @@
                     </div>
                     <!-- Chat List -->
                     <ul id="chat-list">
-                        <li class="chat-list-item" v-for="chat in chatList">
+                        <li class="chat-list-item" :class="setActiveChat(i)" v-for="(chat, i) in chatList"
+                            @click="setCurrentChat(i)">
                             <div class="d-flex align-items-center gap-2">
                                 <img :src="chat.avatar" :alt="chat.name" class="avatar">
                                 <div>
@@ -96,19 +97,9 @@
                     </div>
                     <!-- Messages List -->
                     <ul id="messages-list">
-                        <li class="messages-list-item">
-                            <div class="card sent-message">
-                                <div class="card-body">Hai portato a spasso il cane?</div>
-                            </div>
-                        </li>
-                        <li class="messages-list-item">
-                            <div class="card sent-message">
-                                <div class="card-body">Ricordati di stendere i panni</div>
-                            </div>
-                        </li>
-                        <li class="messages-list-item">
-                            <div class="card received-message">
-                                <div class="card-body">Tutto fatto!</div>
+                        <li class="messages-list-item" v-for="message in chatList[currentChat].messages">
+                            <div class="card" :class="setStatusMessage(message)">
+                                <div class="card-body">{{message.message}}</div>
                             </div>
                         </li>
                     </ul>
