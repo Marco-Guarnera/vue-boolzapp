@@ -3,6 +3,11 @@
 const app = Vue.createApp({
     name: "Boolzapp",
     data: () => ({
+        // User
+        user: {
+            name: "Sofia",
+            avatar: "./img/avatarUser.png"
+        },
         // Struttura dati
         chatList: [
             {
