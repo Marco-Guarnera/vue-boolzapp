@@ -1,3 +1,7 @@
+:root {
+    --secondary-color: #6c757d;
+}
+
 /* CSS Reset */
 * {
     box-sizing: border-box;
@@ -19,6 +23,10 @@ button {
     cursor: pointer;
 }
 
+div {
+    line-height: 100%;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -31,51 +39,141 @@ main {
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Font Awesome Icons */
+[class^="fa-"] {
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 1.125rem;
 }
 
 /* Utilities */
 
-/* Wrapper */
-.wrapper {
-    margin: 0 auto;
-    max-width: 1080px;
+img.avatar {
+    height: 50px;
+    border-radius: 50%;
 }
 
-/* Flexbox */
-
-.flex {
-    display: flex;
+.name {
+    font-weight: bold;
 }
 
-.flex.row {
-    flex-direction: row;
-    flex-wrap: wrap;
+.sent-message {
+    background-color: #D5F9BA;
+    position: relative;
+    top: 0;
+    left: 60%;
+}
+
+.received-message {
+    background-color: #FFF;
 }
 
 /* Layout */
 
-.row {
+.container>.row {
     height: calc(100vh - 50px);
+}
+
+#chat {
+    border-right: 2px solid #E0E0E0;
 }
 
 .header {
     height: 50px;
     background-color: #EAEAEA;
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.chat {
-    height: calc(100vh - 100px);
+.header img {
+    height: 40px;
+}
+
+.functions {
+    padding-right: 0.5rem;
+}
+
+.notifications {
+    height: 75px;
+    background-color: #8EDAFC;
+    padding: 0 1rem;
+}
+
+.notifications i {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    color: #8EDAFC;
     background-color: #FFF;
-    overflow-y: auto;
+    line-height: 45px;
+    text-align: center;
 }
 
-.messages {
+.notifications a {
+    text-decoration: underline;
+}
+
+.filter {
+    height: 40px;
+    background-color: #EAEAEA;
+    padding: 5px;
+}
+
+.filter>* {
+    height: 30px;
+    background-color: #FFF;
+}
+
+.filter div {
+    padding: 0 1.5rem;
+}
+
+.filter i {
+    font-size: 0.875rem;
+}
+
+#chat-list {
+    height: calc(100vh - 215px);
+    background-color: #FFF;
+    overflow-y: scroll;
+}
+
+.chat-list-item {
+    height: 75px;
+    border-bottom: 1px solid #EAEAEA;
+    display: flex;
+    padding: 0 1rem;
+}
+
+#messages-list {
     height: calc(100vh - 150px);
     background-image: url(../img/background.png);
-    overflow-y: auto;
+    overflow-y: scroll;
+    padding: 25px;
 }
 
-.footer {
+.messages-list-item {
+    margin-bottom: 0.5rem;
+}
+
+#messages-list .card {
+    width: 40%;
+    border: 1px solid #E0E0E0;
+}
+
+.inputs {
     height: 50px;
-    background-color: #F3EEEA;
+    background-color: #EAEAEA;
+}
+
+.inputs>.row {
+    height: 100%;
+    align-items: center;
+    text-align: center;
 }

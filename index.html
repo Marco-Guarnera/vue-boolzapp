@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -32,14 +36,93 @@
             <div class="row g-0">
                 <!-- Chat -->
                 <div id="chat" class="col-4">
-                    <div class="header"></div>
-                    <div class="chat"></div>
+                    <div class="header">
+                        <!-- User -->
+                        <div id="user" class="d-flex align-items-center gap-2">
+                            <img src="img/avatarUser.png" alt="Sofia" class="avatar">
+                            <div class="name">Sofia</div>
+                        </div>
+                        <!-- Functions -->
+                        <ul class="functions d-flex gap-3">
+                            <li><i class="fa-solid fa-circle-notch"></i></li>
+                            <li><i class="fa-solid fa-message"></i></li>
+                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                        </ul>
+                    </div>
+                    <!-- Notifications -->
+                    <div class="notifications d-flex">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-bell-slash"></i>
+                            <div>
+                                <div class="fw-bold mb-1">Ricevi notifiche di nuovi messaggi</div>
+                                <a href="#" class="text-secondary">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Filter -->
+                    <div class="filter input-group">
+                        <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <!-- Chat List -->
+                    <ul id="chat-list">
+                        <li class="chat-list-item">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="img/avatar01.png" alt="Michele" class="avatar">
+                                <div>
+                                    <div class="name mb-1">Michele</div>
+                                    <div class="text-secondary">Ultimo messaggio inviato</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <!-- Messages -->
                 <div id="messages" class="col-8">
-                    <div class="header"></div>
-                    <div class="messages"></div>
-                    <div class="footer"></div>
+                    <div class="header">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="img/avatar01.png" alt="Michele" class="avatar">
+                            <div>
+                                <div class="name">Michele</div>
+                                <div class="text-secondary">ultimo accesso: oggi alle 12:30</div>
+                            </div>
+                        </div>
+                        <!-- Functions -->
+                        <ul class="functions d-flex gap-3">
+                            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                            <li><i class="fa-solid fa-paperclip"></i></li>
+                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                        </ul>
+                    </div>
+                    <!-- Messages List -->
+                    <ul id="messages-list">
+                        <li class="messages-list-item">
+                            <div class="card sent-message">
+                                <div class="card-body">Hai portato a spasso il cane?</div>
+                            </div>
+                        </li>
+                        <li class="messages-list-item">
+                            <div class="card sent-message">
+                                <div class="card-body">Ricordati di stendere i panni</div>
+                            </div>
+                        </li>
+                        <li class="messages-list-item">
+                            <div class="card received-message">
+                                <div class="card-body">Tutto fatto!</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Inputs -->
+                    <div class="inputs">
+                        <div class="row g-0">
+                            <div class="col-1"><i class="fa-regular fa-face-smile"></i></div>
+                            <!-- Text Input -->
+                            <div class="col-10">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
