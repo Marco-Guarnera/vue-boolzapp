@@ -67,9 +67,6 @@ img.avatar {
 
 .sent-message {
     background-color: #D5F9BA;
-    position: relative;
-    top: 0;
-    left: 60%;
 }
 
 .received-message {
@@ -168,11 +165,11 @@ img.avatar {
 }
 
 .messages-list-item {
+    width: 40%;
     margin-bottom: 0.5rem;
 }
 
 #messages-list .card {
-    width: 40%;
     border: 1px solid #E0E0E0;
 }
 

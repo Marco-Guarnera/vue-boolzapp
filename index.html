@@ -96,8 +96,9 @@
                         </ul>
                     </div>
                     <!-- Messages List -->
-                    <ul id="messages-list">
-                        <li class="messages-list-item" v-for="message in chatList[currentChat].messages">
+                    <ul id="messages-list" class="d-flex flex-column">
+                        <li class="messages-list-item" :class="{'align-self-end': message.status === 'sent'}"
+                            v-for="message in chatList[currentChat].messages">
                             <div class="card" :class="setStatusMessage(message)">
                                 <div class="card-body" v-text="message.message"></div>
                             </div>
@@ -110,7 +111,7 @@
                             <!-- Text Input -->
                             <div class="col-10">
                                 <input type="text" class="form-control" placeholder="Scrivi un messaggio"
-                                    v-model.trim="newMessage.message" @keyup.enter="sendMessage(newMessage)">
+                                    v-model.trim="newMessage" @keyup.enter="sendMessage(newMessage)">
                             </div>
                             <div class="col-1"><i class="fa-solid fa-microphone"></i></div>
                         </div>

@@ -4,14 +4,10 @@ const app = Vue.createApp({
     name: "Boolzapp",
     data: () => ({
         currentChat: 0,
+        newMessage: "",
         user: {
             name: "Sofia",
             avatar: "./img/avatarUser.png"
-        },
-        newMessage: {
-            date: "",
-            message: "",
-            status: "sent"
         },
         // Struttura dati
         chatList: [
@@ -206,25 +202,21 @@ const app = Vue.createApp({
         setCurrentChat(newChat) {
             return this.currentChat = newChat;
         },
-        sendMessage(newMessage) {
-            if (!this.newMessage.message) return;
-            this.chatList[this.currentChat].messages.push(newMessage);
-            setTimeout(() => {
-                const reply = {
-                    date: "",
-                    message: "Ok!",
-                    status: "received"
-                }
-                this.chatList[this.currentChat].messages.push(reply);
-            }, 1000);
-            this.clearNewMessage();
-        },
-        clearNewMessage() {
-            this.newMessage = {
+        createMessage(message, status) {
+            const newMessage = {
                 date: "",
-                message: "",
-                status: "sent"
+                message,
+                status
             }
+            this.chatList[this.currentChat].messages.push(newMessage);
+        },
+        sendMessage(message) {
+            if (!message) return;
+            this.createMessage(message, "sent");
+            setTimeout(() => {
+                this.createMessage("Ok!", "received")
+            }, 1000);
+            this.newMessage = "";
         },
         setStatusMessage(message) {
             return message.status === "sent" ? "sent-message" : "received-message";
