@@ -40,7 +40,7 @@
                         <!-- User -->
                         <div id="user" class="d-flex align-items-center gap-2">
                             <img :src="user.avatar" :alt="user.name" class="avatar">
-                            <div class="name">{{user.name}}</div>
+                            <div class="name" v-text="user.name"></div>
                         </div>
                         <!-- Functions -->
                         <ul class="functions d-flex gap-3">
@@ -71,7 +71,7 @@
                             <div class="d-flex align-items-center gap-2">
                                 <img :src="chat.avatar" :alt="chat.name" class="avatar">
                                 <div>
-                                    <div class="name mb-1">{{chat.name}}</div>
+                                    <div class="name mb-1" v-text="chat.name"></div>
                                     <div class="text-secondary">Ultimo messaggio inviato</div>
                                 </div>
                             </div>
@@ -82,9 +82,9 @@
                 <div id="messages" class="col-8">
                     <div class="header">
                         <div class="d-flex align-items-center gap-2">
-                            <img src="img/avatar01.png" alt="Michele" class="avatar">
+                            <img :src="chatList[currentChat].avatar" :alt="chatList[currentChat].name" class="avatar">
                             <div>
-                                <div class="name">Michele</div>
+                                <div class="name" v-text="chatList[currentChat].name"></div>
                                 <div class="text-secondary">ultimo accesso: oggi alle 12:30</div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                     <ul id="messages-list">
                         <li class="messages-list-item" v-for="message in chatList[currentChat].messages">
                             <div class="card" :class="setStatusMessage(message)">
-                                <div class="card-body">{{message.message}}</div>
+                                <div class="card-body" v-text="message.message"></div>
                             </div>
                         </li>
                     </ul>
